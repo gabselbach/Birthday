@@ -1,34 +1,155 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <title>Gabriella v30</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabi 30 anos | Além do Código</title>
+    <!-- Fonts & MUI Dependencies -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js"></script>
+    <style>
+        body { margin: 0; background-color: #faf7f2; }
+        .hero-gradient {
+            background: linear-gradient(135deg, #ff9e80 0%, #d4a373 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-padding { padding: 60px 20px; }
+        .card-backend { transition: transform 0.3s; border-radius: 15px; }
+        .card-backend:hover { transform: translateY(-10px); }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Gabriella v30</h1>
+    <div id="root"></div>
 
-    <div class="card">
-      <p><strong>Role:</strong> Software Developer</p>
-      <p><strong>Cafeína:</strong> <span id="caffeine">0</span>g</p>
-      <p><strong>Status:</strong> <span id="mood">booting...</span></p>
-    </div>
+    <script type="text/babel">
+        const { 
+            Container, Typography, Box, Grid, Card, CardContent, 
+            ThemeProvider, createTheme, Button, Avatar, Divider, Accordion, AccordionSummary, AccordionDetails
+        } = MaterialUI;
 
-    <div class="actions">
-      <button id="coffeeBtn">☕ Tomar café</button>
-      <button id="deployBtn">🚀 Deploy vida</button>
-    </div>
+        // Tema personalizado Sunset / Boho Chic
+        const theme = createTheme({
+            palette: {
+                primary: { main: '#d4a373' },
+                secondary: { main: '#ff9e80' },
+                background: { default: '#faf7f2' }
+            },
+            typography: {
+                fontFamily: 'Roboto, Arial',
+                h2: { fontWeight: 700 }
+            }
+        });
 
-    <div class="terminal">
-      <div id="logs"></div>
-    </div>
+        function App() {
+            return (
+                <ThemeProvider theme={theme}>
+                    <Box>
+                        {/* Hero Section */}
+                        <Box className="hero-gradient">
+                            <Container maxWidth="md">
+                                <Typography variant="h2" gutterBottom>Gabi 30</Typography>
+                                <Typography variant="h5">Café, Código e Conexões</Typography>
+                            </Container>
+                        </Box>
 
-    <footer>
-      <p>"Pequenas otimizações fazem grandes diferenças"</p>
-    </footer>
-  </div>
+                        {/* Sobre Mim Section */}
+                        <Container maxWidth="md" className="section-padding">
+                            <Grid container spacing={4} alignItems="center">
+                                <Grid item xs={12} md={4} textAlign="center">
+                                    <Avatar 
+                                        sx={{ width: 200, height: 200, margin: 'auto', border: '5px solid #d4a373' }}
+                                        alt="Gabriela"
+                                    >G</Avatar>
+                                </Grid>
+                                <Grid item xs={12} md={8}>
+                                    <Typography variant="h4" color="primary" gutterBottom>Bem-vindos!</Typography>
+                                    <Typography variant="body1" paragraph>
+                                        Chegar aos 30 é como fazer um deploy em produção: dá um frio na barriga, mas a gente sabe que testou tudo (ou quase tudo) antes! Sou desenvolvedora, apaixonada por arquitetura de sistemas e por criar comunidades.
+                                    </Typography>
+                                    <Typography variant="body1">
+                                        Este café de 100g é para te acompanhar em um momento de pausa, seja lendo um livro ou debugando a vida.
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        </Container>
 
-  <script src="app.js"></script>
+                        <Divider variant="middle" />
+
+                        {/* Backend Section */}
+                        <Box bgcolor="#f2ece4" className="section-padding">
+                            <Container maxWidth="md">
+                                <Typography variant="h4" textAlign="center" gutterBottom color="primary">
+                                    O que é esse tal de "Backend"?
+                                </Typography>
+                                <Typography variant="body1" textAlign="center" sx={{ mb: 4 }}>
+                                    Muita gente me pergunta o que eu faço o dia todo na frente do computador. 
+                                    Se o site fosse um restaurante, o backend seria a cozinha.
+                                </Typography>
+                                
+                                <Grid container spacing={3}>
+                                    {[
+                                        { title: "Arquitetura", desc: "Desenhar como as informações viajam de forma segura e rápida.", icon: "settings_input_component" },
+                                        { title: "Dados", desc: "Organizar onde cada bit de informação é guardado com carinho.", icon: "storage" },
+                                        { title: "Interatividade", desc: "Fazer a mágica acontecer por trás dos botões que você clica.", icon: "alt_route" }
+                                    ].map((item, index) => (
+                                        <Grid item xs={12} md={4} key={index}>
+                                            <Card className="card-backend">
+                                                <CardContent sx={{ textAlign: 'center' }}>
+                                                    <span className="material-icons" style={{ fontSize: 48, color: '#ff9e80' }}>{item.icon}</span>
+                                                    <Typography variant="h6">{item.title}</Typography>
+                                                    <Typography variant="body2">{item.desc}</Typography>
+                                                </CardContent>
+                                            </Card>
+                                        </Grid>
+                                    ))}
+                                </Grid>
+                            </Container>
+                        </Box>
+
+                        {/* Curiosidades Interativas */}
+                        <Container maxWidth="md" className="section-padding">
+                            <Typography variant="h4" textAlign="center" gutterBottom>Curiosidades</Typography>
+                            <Accordion>
+                                <AccordionSummary expandIcon={<span className="material-icons">expand_more</span>}>
+                                    <Typography>Por que café?</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <Typography>
+                                        O café é o combustível oficial do desenvolvedor. Ele transforma cafeína em linhas de código e paciência para resolver problemas complexos.
+                                    </Typography>
+                                </AccordionDetails>
+                            </Accordion>
+                            <Accordion>
+                                <AccordionSummary expandIcon={<span className="material-icons">expand_more</span>}>
+                                    <Typography>E esse tal de GitHub?</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <Typography>
+                                        Este site está hospedado no GitHub, o lugar onde guardamos nossos "projetos de vida" em código. É a maior rede social de programadores do mundo!
+                                    </Typography>
+                                </AccordionDetails>
+                            </Accordion>
+                        </Container>
+
+                        {/* Footer */}
+                        <Box py={4} textAlign="center" bgcolor="primary.main" color="white">
+                            <Typography variant="body2">
+                                Feito com React & Material UI por Gabi • 2026
+                            </Typography>
+                        </Box>
+                    </Box>
+                </ThemeProvider>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
 </body>
 </html>
