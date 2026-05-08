@@ -1,155 +1,126 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabi 30 anos | Além do Código</title>
-    <!-- Fonts & MUI Dependencies -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js"></script>
-    <style>
-        body { margin: 0; background-color: #faf7f2; }
-        .hero-gradient {
-            background: linear-gradient(135deg, #ff9e80 0%, #d4a373 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .section-padding { padding: 60px 20px; }
-        .card-backend { transition: transform 0.3s; border-radius: 15px; }
-        .card-backend:hover { transform: translateY(-10px); }
-    </style>
+    <title>30 Anos - Movido a Café e Código</title>
+    
+    <!-- Materialize CSS (Framework externo) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Google Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- NOSSO ARQUIVO CSS PERSONALIZADO -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="root"></div>
 
-    <script type="text/babel">
-        const { 
-            Container, Typography, Box, Grid, Card, CardContent, 
-            ThemeProvider, createTheme, Button, Avatar, Divider, Accordion, AccordionSummary, AccordionDetails
-        } = MaterialUI;
+    <!-- Hero Section -->
+    <header class="hero z-depth-2">
+        <h1>De Repente 30!</h1>
+        <p>Transformando café em código desde 1994.</p>
+    </header>
 
-        // Tema personalizado Sunset / Boho Chic
-        const theme = createTheme({
-            palette: {
-                primary: { main: '#d4a373' },
-                secondary: { main: '#ff9e80' },
-                background: { default: '#faf7f2' }
-            },
-            typography: {
-                fontFamily: 'Roboto, Arial',
-                h2: { fontWeight: 700 }
-            }
-        });
+    <main class="container">
+        
+        <!-- Seção 1: Sobre e Agradecimento -->
+        <div class="row" style="margin-top: -50px;">
+            <div class="col s12 m10 offset-m1">
+                <div class="card z-depth-3">
+                    <div class="card-content center-align">
+                        <i class="material-icons" style="font-size: 3rem; color: var(--accent-color);">celebration</i>
+                        <span class="card-title" style="font-weight: 700;">Muito obrigado por celebrar comigo!</span>
+                        <p style="font-size: 1.1rem; line-height: 1.8;">
+                            Chegar aos 30 anos é um marco incrível. Escolhi dar esse pacotinho de 100g de café como lembrança porque, na minha profissão, o café é quase tão importante quanto o computador. Mas afinal, com o que eu trabalho?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        function App() {
-            return (
-                <ThemeProvider theme={theme}>
-                    <Box>
-                        {/* Hero Section */}
-                        <Box className="hero-gradient">
-                            <Container maxWidth="md">
-                                <Typography variant="h2" gutterBottom>Gabi 30</Typography>
-                                <Typography variant="h5">Café, Código e Conexões</Typography>
-                            </Container>
-                        </Box>
+        <div class="divider" style="margin: 40px 0;"></div>
 
-                        {/* Sobre Mim Section */}
-                        <Container maxWidth="md" className="section-padding">
-                            <Grid container spacing={4} alignItems="center">
-                                <Grid item xs={12} md={4} textAlign="center">
-                                    <Avatar 
-                                        sx={{ width: 200, height: 200, margin: 'auto', border: '5px solid #d4a373' }}
-                                        alt="Gabriela"
-                                    >G</Avatar>
-                                </Grid>
-                                <Grid item xs={12} md={8}>
-                                    <Typography variant="h4" color="primary" gutterBottom>Bem-vindos!</Typography>
-                                    <Typography variant="body1" paragraph>
-                                        Chegar aos 30 é como fazer um deploy em produção: dá um frio na barriga, mas a gente sabe que testou tudo (ou quase tudo) antes! Sou desenvolvedora, apaixonada por arquitetura de sistemas e por criar comunidades.
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Este café de 100g é para te acompanhar em um momento de pausa, seja lendo um livro ou debugando a vida.
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-                        </Container>
+        <!-- Seção 2: O que é Backend? -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <h4 style="color: var(--primary-coffee); font-weight: 700;">Afinal, o que é um Desenvolvedor Backend?</h4>
+                <p class="grey-text text-darken-1">Deixa eu te explicar usando a linguagem universal: <b>Uma Cafeteria</b>.</p>
+            </div>
+        </div>
 
-                        <Divider variant="middle" />
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="icon-block card-panel z-depth-1 hoverable">
+                    <i class="material-icons">storefront</i>
+                    <h5 class="center">O Frontend</h5>
+                    <p class="light">É o balcão da cafeteria, o cardápio bonito, o sorriso do atendente. É tudo aquilo que você <b>vê</b> e com o qual você <b>interage</b> no aplicativo ou site.</p>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="icon-block card-panel z-depth-1 hoverable" style="border: 2px solid var(--primary-coffee);">
+                    <i class="material-icons">engineering</i>
+                    <h5 class="center">O Backend (Meu Trabalho)</h5>
+                    <p class="light">É a <b>cozinha, o estoque e a máquina de café</b>. Eu não desenho o balcão, mas eu garanto que quando você pedir um expresso, o estoque seja atualizado, a água ferva na temperatura certa e o café caia na sua xícara sem explodir a loja inteira.</p>
+                </div>
+            </div>
+        </div>
 
-                        {/* Backend Section */}
-                        <Box bgcolor="#f2ece4" className="section-padding">
-                            <Container maxWidth="md">
-                                <Typography variant="h4" textAlign="center" gutterBottom color="primary">
-                                    O que é esse tal de "Backend"?
-                                </Typography>
-                                <Typography variant="body1" textAlign="center" sx={{ mb: 4 }}>
-                                    Muita gente me pergunta o que eu faço o dia todo na frente do computador. 
-                                    Se o site fosse um restaurante, o backend seria a cozinha.
-                                </Typography>
-                                
-                                <Grid container spacing={3}>
-                                    {[
-                                        { title: "Arquitetura", desc: "Desenhar como as informações viajam de forma segura e rápida.", icon: "settings_input_component" },
-                                        { title: "Dados", desc: "Organizar onde cada bit de informação é guardado com carinho.", icon: "storage" },
-                                        { title: "Interatividade", desc: "Fazer a mágica acontecer por trás dos botões que você clica.", icon: "alt_route" }
-                                    ].map((item, index) => (
-                                        <Grid item xs={12} md={4} key={index}>
-                                            <Card className="card-backend">
-                                                <CardContent sx={{ textAlign: 'center' }}>
-                                                    <span className="material-icons" style={{ fontSize: 48, color: '#ff9e80' }}>{item.icon}</span>
-                                                    <Typography variant="h6">{item.title}</Typography>
-                                                    <Typography variant="body2">{item.desc}</Typography>
-                                                </CardContent>
-                                            </Card>
-                                        </Grid>
-                                    ))}
-                                </Grid>
-                            </Container>
-                        </Box>
+        <!-- Seção 3: Interatividade - O dia a dia -->
+        <div class="row" style="margin-top: 40px;">
+            <div class="col s12">
+                <h5 class="center-align" style="font-weight: 700;">Como é o meu dia a dia?</h5>
+                <p class="center-align grey-text">Aperte os botões abaixo para ver o que acontece nos bastidores do meu trabalho.</p>
+                
+                <!-- Terminal -->
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-dot dot-red"></div>
+                        <div class="terminal-dot dot-yellow"></div>
+                        <div class="terminal-dot dot-green"></div>
+                        <span style="color: #B0BEC5; margin-left: 10px; font-family: monospace;">bash - dev-backend-aos-30</span>
+                    </div>
+                    
+                    <div class="terminal-body" id="terminal-body">
+                        <span>> Sistema iniciado. Aguardando comandos do usuário...</span><br>
+                    </div>
 
-                        {/* Curiosidades Interativas */}
-                        <Container maxWidth="md" className="section-padding">
-                            <Typography variant="h4" textAlign="center" gutterBottom>Curiosidades</Typography>
-                            <Accordion>
-                                <AccordionSummary expandIcon={<span className="material-icons">expand_more</span>}>
-                                    <Typography>Por que café?</Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography>
-                                        O café é o combustível oficial do desenvolvedor. Ele transforma cafeína em linhas de código e paciência para resolver problemas complexos.
-                                    </Typography>
-                                </AccordionDetails>
-                            </Accordion>
-                            <Accordion>
-                                <AccordionSummary expandIcon={<span className="material-icons">expand_more</span>}>
-                                    <Typography>E esse tal de GitHub?</Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography>
-                                        Este site está hospedado no GitHub, o lugar onde guardamos nossos "projetos de vida" em código. É a maior rede social de programadores do mundo!
-                                    </Typography>
-                                </AccordionDetails>
-                            </Accordion>
-                        </Container>
+                    <!-- Botoes de Ação -->
+                    <div class="terminal-actions">
+                        <button class="btn waves-effect waves-light btn-coffee" onclick="runCommand('cafe')">
+                            <i class="material-icons left">local_cafe</i>Tomar Café
+                        </button>
+                        <button class="btn waves-effect waves-light red darken-2" onclick="runCommand('bug')">
+                            <i class="material-icons left">bug_report</i>Resolver Bug
+                        </button>
+                        <button class="btn waves-effect waves-light green darken-2" onclick="runCommand('deploy')">
+                            <i class="material-icons left">cloud_upload</i>Fazer Deploy
+                        </button>
+                        <button class="btn waves-effect waves-light deep-purple lighten-1" onclick="runCommand('ia')">
+                            <i class="material-icons left">psychology</i>Usar IA
+                        </button>
+                        <button class="btn waves-effect waves-light blue-grey" onclick="runCommand('reuniao')">
+                            <i class="material-icons left">groups</i>Entrar em Call
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                        {/* Footer */}
-                        <Box py={4} textAlign="center" bgcolor="primary.main" color="white">
-                            <Typography variant="body2">
-                                Feito com React & Material UI por Gabi • 2026
-                            </Typography>
-                        </Box>
-                    </Box>
-                </ThemeProvider>
-            );
-        }
+    </main>
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.2rem;">Espero que aproveite o café! ☕</p>
+            <p>Feito com ❤️, código e cafeína para comemorar meus 30 anos.</p>
+        </div>
+    </footer>
+
+    <!-- Materialize JS (Framework externo) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!-- NOSSO ARQUIVO JAVASCRIPT PERSONALIZADO -->
+    <script src="app.js"></script>
 </body>
 </html>

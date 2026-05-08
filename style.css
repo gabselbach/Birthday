@@ -1,60 +1,116 @@
+:root {
+    --primary-coffee: #5D4037; /* Marrom escuro */
+    --light-coffee: #D7CCC8;   /* Bege */
+    --accent-color: #FF5722;   /* Laranja Material */
+}
+
 body {
-  margin: 0;
-  font-family: monospace;
-  background: #f5ede6;
-  color: #3e2c23;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
-.container {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(93, 64, 55, 0.8), rgba(93, 64, 55, 0.9)), url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1600&auto=format&fit=crop') center/cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-color);
 }
 
-h1 {
-  text-align: center;
-  color: #b25b3e;
+.hero h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
 }
 
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Cards Material UI */
 .card {
-  background: #fff8f3;
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #e0c3b3;
-  margin-bottom: 15px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
 }
 
-.actions {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-button {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background: #b25b3e;
-  color: white;
-  cursor: pointer;
+.icon-block {
+    padding: 0 15px;
+    text-align: center;
 }
 
-button:hover {
-  background: #8f4630;
+.icon-block .material-icons {
+    font-size: 4rem;
+    color: var(--primary-coffee);
 }
 
-.terminal {
-  background: #1e1e1e;
-  color: #00ff9c;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 12px;
-  min-height: 120px;
+/* Seção O que é Backend (Analogia) */
+.analogy-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border-left: 5px solid var(--primary-coffee);
 }
+
+/* Terminal Interativo */
+.terminal-container {
+    background-color: #263238; /* Material Blue Grey 900 */
+    border-radius: 8px;
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.terminal-header {
+    background-color: #37474F;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.dot-red { background-color: #FF5252; }
+.dot-yellow { background-color: #FFD740; }
+.dot-green { background-color: #69F0AE; }
+
+.terminal-body {
+    padding: 20px;
+    font-family: 'Fira Code', monospace;
+    color: #69F0AE;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.command-input { color: #fff; }
+
+.terminal-actions {
+    background-color: #37474F;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-coffee { background-color: var(--primary-coffee) !important; }
+.btn-coffee:hover { background-color: #4E342E !important; }
 
 footer {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 12px;
+    background-color: var(--primary-coffee);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
 }
